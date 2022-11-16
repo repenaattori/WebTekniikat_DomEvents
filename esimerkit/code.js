@@ -1,17 +1,11 @@
-let p = document.querySelector("p");
+let button = document.querySelector("button");
+let field = document.getElementById("username");
 
-p.addEventListener("click", OkClicked);
-p.addEventListener("wheel", Wheel);
+button.addEventListener("click", showUsername);
 
-function OkClicked(){
-    p.style.width = "500px";
-}
-
-/**
- * 
- * @param {WheelEvent} event 
- */
-function Wheel(event){
-    console.log(event.deltaY);
-    console.log("Wheel");
+function showUsername(){
+    let username = field.value;
+    let h = document.createElement("h3");
+    h.textContent = username;
+    document.body.appendChild(h);
 }
